@@ -21,7 +21,7 @@ module Fog
         private
 
         def get_circuit_authorization_object(circuit_authorization_params)
-          circuit_authorization = Azure::ARM::Network::Models::ExpressRouteCircuitAuthorization.new
+          circuit_authorization = Azure::Network::Mgmt::V2020_05_01::Models::ExpressRouteCircuitAuthorization.new
           circuit_authorization.name = circuit_authorization_params[:authorization_name]
           circuit_authorization.authorization_key = circuit_authorization_params[:authorization_key]
           circuit_authorization.authorization_use_status = circuit_authorization_params[:authorization_use_status]
@@ -42,8 +42,8 @@ module Fog
               'authorizationUseStatus' => 'Available'
             }
           }
-          authorization_mapper = Azure::ARM::Network::Models::ExpressRouteCircuitAuthorization.mapper
-          @network_client.deserialize(authorization_mapper, authorization, 'result.body')
+          authorization_mapper = Azure::Network::Mgmt::V2020_05_01::Models::ExpressRouteCircuitAuthorization.mapper
+          @network_client.deserialize(authorization_mapper, authorization)
         end
       end
     end

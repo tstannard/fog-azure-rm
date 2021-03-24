@@ -21,8 +21,8 @@ module ApiStub
               "elasticPoolName" : "{elastic-pool-name}"
             }
           }'
-          database_mapper = Azure::ARM::SQL::Models::Database.mapper
-          sql_manager_client.deserialize(database_mapper, Fog::JSON.decode(database), 'result.body')
+          database_mapper = Azure::SQL::Mgmt::V2015_05_01_preview::Models::Database.mapper
+          sql_manager_client.deserialize(database_mapper, Fog::JSON.decode(database))
         end
       end
     end

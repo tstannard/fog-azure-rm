@@ -161,8 +161,8 @@ module Fog
               ]
             }
           }'
-          load_balancer_mapper = Azure::ARM::Network::Models::LoadBalancer.mapper
-          @network_client.deserialize(load_balancer_mapper, JSON.load(response), 'result.body')
+          load_balancer_mapper = Azure::Network::Mgmt::V2020_05_01::Models::LoadBalancer.mapper
+          @network_client.deserialize(load_balancer_mapper, JSON.load(response))
         end
       end
     end

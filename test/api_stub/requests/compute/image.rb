@@ -32,8 +32,8 @@ module ApiStub
               }
             }
           }
-          image_mapper = Azure::ARM::Compute::Models::Image.mapper
-          compute_client.deserialize(image_mapper, body, 'result.body')
+          image_mapper = Azure::Compute::Mgmt::V2020_06_30::Models::Image.mapper
+          compute_client.deserialize(image_mapper, body)
         end
       end
     end

@@ -20,20 +20,20 @@ module Fog
         private
 
         def setup_params(image_config)
-          storage_profile_image = Azure::ARM::Compute::Models::ImageStorageProfile.new
+          storage_profile_image = Azure::Compute::Mgmt::V2020_06_30::Models::ImageStorageProfile.new
           storage_profile_image.os_disk = create_generalized_os_disk_image(image_config)
-          image = Azure::ARM::Compute::Models::Image.new
+          image = Azure::Compute::Mgmt::V2020_06_30::Models::Image.new
           image.storage_profile = storage_profile_image
           image.location = image_config[:location]
           image
         end
 
         def create_generalized_os_disk_image(image_config)
-          os_disk_image = Azure::ARM::Compute::Models::ImageOSDisk.new
+          os_disk_image = Azure::Compute::Mgmt::V2020_06_30::Models::ImageOSDisk.new
           os_disk_image.os_type = image_config[:platform]
           os_disk_image.os_state = 'Generalized'
           os_disk_image.blob_uri = image_config[:new_vhd_path]
-          os_disk_image.caching = Azure::ARM::Compute::Models::CachingTypes::ReadWrite
+          os_disk_image.caching = Azure::Compute::Mgmt::V2020_06_30::Models::CachingTypes::ReadWrite
           os_disk_image
         end
       end
@@ -59,8 +59,8 @@ module Fog
               }
             }
           }
-          image_mapper = Azure::ARM::Compute::Models::Image.mapper
-          @compute_mgmt_client.deserialize(image_mapper, image_obj, 'result.body')
+          image_mapper = Azure::Compute::Mgmt::V2020_06_30::Models::Image.mapper
+          @compute_mgmt_client.deserialize(image_mapper, image_obj)
         end
       end
     end

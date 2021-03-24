@@ -38,8 +38,8 @@ module Fog
                 "direction":"Inbound"
               }
           }'
-          nsr_mapper = Azure::ARM::Network::Models::SecurityRule.mapper
-          @network_client.deserialize(nsr_mapper, JSON.load(nsr), 'result.body')
+          nsr_mapper = Azure::Network::Mgmt::V2020_05_01::Models::SecurityRule.mapper
+          @network_client.deserialize(nsr_mapper, JSON.load(nsr))
         end
       end
     end

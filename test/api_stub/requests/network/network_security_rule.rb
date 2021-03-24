@@ -21,8 +21,8 @@ module ApiStub
                 "direction":"Inbound"
               }
           }'
-          nsr_mapper = Azure::ARM::Network::Models::SecurityRule.mapper
-          network_client.deserialize(nsr_mapper, Fog::JSON.decode(nsr), 'result.body')
+          nsr_mapper = Azure::Network::Mgmt::V2020_05_01::Models::SecurityRule.mapper
+          network_client.deserialize(nsr_mapper, Fog::JSON.decode(nsr))
         end
 
         def self.network_security_rule_paramteres_hash
@@ -63,8 +63,8 @@ module ApiStub
               }
           ]
           }'
-          nsr_mapper = Azure::ARM::Network::Models::SecurityRuleListResult.mapper
-          network_client.deserialize(nsr_mapper, Fog::JSON.decode(nsr_list), 'result.body')
+          nsr_mapper = Azure::Network::Mgmt::V2020_05_01::Models::SecurityRuleListResult.mapper
+          network_client.deserialize(nsr_mapper, Fog::JSON.decode(nsr_list))
         end
       end
     end

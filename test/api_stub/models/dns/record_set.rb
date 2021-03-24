@@ -26,8 +26,8 @@ module ApiStub
                   ]
               }
           }'
-          record_set_mapper = Azure::ARM::Dns::Models::RecordSet.mapper
-          dns_client.deserialize(record_set_mapper, Fog::JSON.decode(record_set), 'result.body')
+          record_set_mapper = Azure::Dns::Mgmt::V2017_10_01::Models::RecordSet.mapper
+          dns_client.deserialize(record_set_mapper, Fog::JSON.decode(record_set))
         end
 
         def self.response_for_cname(dns_client)
@@ -48,8 +48,8 @@ module ApiStub
                 }
             }
           }'
-          cname_record_mapper = Azure::ARM::Dns::Models::RecordSet.mapper
-          dns_client.deserialize(cname_record_mapper, Fog::JSON.decode(cname_record), 'result.body')
+          cname_record_mapper = Azure::Dns::Mgmt::V2017_10_01::Models::RecordSet.mapper
+          dns_client.deserialize(cname_record_mapper, Fog::JSON.decode(cname_record))
         end
       end
     end

@@ -15,8 +15,8 @@ module ApiStub
               "administratorLoginPassword" : "{admin-password}"
             }
           }'
-          server_mapper = Azure::ARM::SQL::Models::Server.mapper
-          server_manager_client.deserialize(server_mapper, Fog::JSON.decode(sql_server), 'result.body')
+          server_mapper = Azure::SQL::Mgmt::V2015_05_01_preview::Models::Server.mapper
+          server_manager_client.deserialize(server_mapper, Fog::JSON.decode(sql_server))
         end
       end
     end

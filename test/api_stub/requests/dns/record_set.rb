@@ -21,8 +21,8 @@ module ApiStub
                           }
           }]
           }'
-          record_set_mapper = Azure::ARM::Dns::Models::RecordSetListResult.mapper
-          dns_client.deserialize(record_set_mapper, Fog::JSON.decode(body), 'result.body').value
+          record_set_mapper = Azure::Dns::Mgmt::V2017_10_01::Models::RecordSetListResult.mapper
+          dns_client.deserialize(record_set_mapper, Fog::JSON.decode(body)).value
         end
 
         def self.record_set_response_for_a_type_response(dns_client)
@@ -45,8 +45,8 @@ module ApiStub
               ]
             }
           }'
-          record_set_mapper = Azure::ARM::Dns::Models::RecordSet.mapper
-          dns_client.deserialize(record_set_mapper, Fog::JSON.decode(record_set), 'result.body')
+          record_set_mapper = Azure::Dns::Mgmt::V2017_10_01::Models::RecordSet.mapper
+          dns_client.deserialize(record_set_mapper, Fog::JSON.decode(record_set))
         end
 
         def self.record_set_response_for_cname_type(dns_client)
@@ -66,8 +66,8 @@ module ApiStub
               }
             }
           }'
-          record_set_mapper = Azure::ARM::Dns::Models::RecordSet.mapper
-          dns_client.deserialize(record_set_mapper, Fog::JSON.decode(record_set), 'result.body')
+          record_set_mapper = Azure::Dns::Mgmt::V2017_10_01::Models::RecordSet.mapper
+          dns_client.deserialize(record_set_mapper, Fog::JSON.decode(record_set))
         end
       end
     end

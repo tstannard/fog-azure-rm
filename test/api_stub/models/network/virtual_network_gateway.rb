@@ -17,8 +17,8 @@ module ApiStub
               "gateway_default_site": "/subscriptions/{subscription-id}/resourceGroups/fog-rg/providers/microsoft.network/localNetworkGateways/{local-network-gateway-name}"
             }
           }'
-          gateway_mapper = Azure::ARM::Network::Models::VirtualNetworkGateway.mapper
-          network_client.deserialize(gateway_mapper, Fog::JSON.decode(network_gateway), 'result.body')
+          gateway_mapper = Azure::Network::Mgmt::V2020_05_01::Models::VirtualNetworkGateway.mapper
+          network_client.deserialize(gateway_mapper, Fog::JSON.decode(network_gateway))
         end
       end
     end

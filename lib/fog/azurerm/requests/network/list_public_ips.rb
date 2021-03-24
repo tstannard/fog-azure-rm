@@ -37,8 +37,8 @@ module Fog
               }
             ]
           }
-          public_ip_mapper = Azure::ARM::Network::Models::PublicIPAddressListResult.mapper
-          @network_client.deserialize(public_ip_mapper, public_ip, 'result.body').value
+          public_ip_mapper = Azure::Network::Mgmt::V2020_05_01::Models::PublicIPAddressListResult.mapper
+          @network_client.deserialize(public_ip_mapper, public_ip).value
         end
       end
     end

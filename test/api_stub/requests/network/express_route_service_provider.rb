@@ -21,8 +21,8 @@ module ApiStub
               }
             ]
           }'
-          express_route_servcie_provider_mapper = Azure::ARM::Network::Models::ExpressRouteServiceProviderListResult.mapper
-          network_client.deserialize(express_route_servcie_provider_mapper, Fog::JSON.decode(service_provider), 'result.body').value
+          express_route_servcie_provider_mapper = Azure::Network::Mgmt::V2020_05_01::Models::ExpressRouteServiceProviderListResult.mapper
+          network_client.deserialize(express_route_servcie_provider_mapper, Fog::JSON.decode(service_provider)).value
         end
       end
     end

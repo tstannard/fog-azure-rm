@@ -59,8 +59,8 @@ module ApiStub
               }
             ]
           }
-          result_mapper = Azure::ARM::Resources::Models::DeploymentListResult.mapper
-          client.deserialize(result_mapper, deployments, 'result.body')
+          result_mapper = Azure::Resources::Mgmt::V2020_06_01::Models::DeploymentListResult.mapper
+          client.deserialize(result_mapper, deployments)
         end
       end
     end

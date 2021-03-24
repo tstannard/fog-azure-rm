@@ -15,8 +15,8 @@ module ApiStub
               'name' => 'Classic'
             }
           }
-          result_mapper = Azure::ARM::Compute::Models::AvailabilitySet.mapper
-          sdk_compute_client.deserialize(result_mapper, avail_set, 'result.body')
+          result_mapper = Azure::Compute::Mgmt::V2020_06_30::Models::AvailabilitySet.mapper
+          sdk_compute_client.deserialize(result_mapper, avail_set)
         end
 
         def self.create_managed_availability_set_response(sdk_compute_client)
@@ -31,8 +31,8 @@ module ApiStub
               'name' => 'Aligned'
             }
           }
-          result_mapper = Azure::ARM::Compute::Models::AvailabilitySet.mapper
-          sdk_compute_client.deserialize(result_mapper, avail_set, 'result.body')
+          result_mapper = Azure::Compute::Mgmt::V2020_06_30::Models::AvailabilitySet.mapper
+          sdk_compute_client.deserialize(result_mapper, avail_set)
         end
 
         def self.list_availability_set_response(sdk_compute_client)
@@ -44,8 +44,8 @@ module ApiStub
               'platformUpdateDomainCount' => UPDATE_DOMAIN_COUNT,
               'platformFaultDomainCount' => FAULT_DOMAIN_COUNT
           }
-          result_mapper = Azure::ARM::Compute::Models::AvailabilitySet.mapper
-          sdk_compute_client.deserialize(result_mapper, avail_set, 'result.body')
+          result_mapper = Azure::Compute::Mgmt::V2020_06_30::Models::AvailabilitySet.mapper
+          sdk_compute_client.deserialize(result_mapper, avail_set)
         end
 
         def self.get_availability_set_response(sdk_compute_client)
@@ -60,8 +60,8 @@ module ApiStub
                 'name' => 'Classic'
               }
           }
-          result_mapper = Azure::ARM::Compute::Models::AvailabilitySet.mapper
-          sdk_compute_client.deserialize(result_mapper, avail_set, 'result.body')
+          result_mapper = Azure::Compute::Mgmt::V2020_06_30::Models::AvailabilitySet.mapper
+          sdk_compute_client.deserialize(result_mapper, avail_set)
         end
       end
     end

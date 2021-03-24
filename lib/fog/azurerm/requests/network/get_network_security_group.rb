@@ -156,8 +156,8 @@ module Fog
                 'provisioningState' => 'Succeeded'
               }
           }
-          nsg_mapper = Azure::ARM::Network::Models::NetworkSecurityGroup.mapper
-          @network_client.deserialize(nsg_mapper, network_security_group, 'result.body')
+          nsg_mapper = Azure::Network::Mgmt::V2020_05_01::Models::NetworkSecurityGroup.mapper
+          @network_client.deserialize(nsg_mapper, network_security_group)
         end
       end
     end

@@ -57,8 +57,8 @@ module ApiStub
               }
             }
           }
-          vm_mapper = Azure::ARM::Compute::Models::VirtualMachine.mapper
-          compute_client.deserialize(vm_mapper, body, 'result.body')
+          vm_mapper = Azure::Compute::Mgmt::V2020_06_30::Models::VirtualMachine.mapper
+          compute_client.deserialize(vm_mapper, body)
         end
 
         def self.create_windows_virtual_machine_response(compute_client)
@@ -112,8 +112,8 @@ module ApiStub
               }
             }
           }
-          vm_mapper = Azure::ARM::Compute::Models::VirtualMachine.mapper
-          compute_client.deserialize(vm_mapper, body, 'result.body')
+          vm_mapper = Azure::Compute::Mgmt::V2020_06_30::Models::VirtualMachine.mapper
+          compute_client.deserialize(vm_mapper, body)
         end
 
         def self.list_available_sizes_for_virtual_machine_response(compute_client)
@@ -129,8 +129,8 @@ module ApiStub
               }
             ]
           }'
-          vm_mapper = Azure::ARM::Compute::Models::VirtualMachineSizeListResult.mapper
-          compute_client.deserialize(vm_mapper, Fog::JSON.decode(body), 'result.body').value
+          vm_mapper = Azure::Compute::Mgmt::V2020_06_30::Models::VirtualMachineSizeListResult.mapper
+          compute_client.deserialize(vm_mapper, Fog::JSON.decode(body)).value
         end
 
         def self.attach_managed_disk_response(compute_client)
@@ -195,8 +195,8 @@ module ApiStub
               }
             }
           }
-          vm_mapper = Azure::ARM::Compute::Models::VirtualMachine.mapper
-          compute_client.deserialize(vm_mapper, body, 'result.body')
+          vm_mapper = Azure::Compute::Mgmt::V2020_06_30::Models::VirtualMachine.mapper
+          compute_client.deserialize(vm_mapper, body)
         end
 
         def self.attach_data_disk_response(compute_client)
@@ -260,8 +260,8 @@ module ApiStub
               }
             }
           }
-          vm_mapper = Azure::ARM::Compute::Models::VirtualMachine.mapper
-          compute_client.deserialize(vm_mapper, body, 'result.body')
+          vm_mapper = Azure::Compute::Mgmt::V2020_06_30::Models::VirtualMachine.mapper
+          compute_client.deserialize(vm_mapper, body)
         end
       end
     end

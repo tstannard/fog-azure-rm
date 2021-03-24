@@ -28,8 +28,8 @@ module Fog
               }
             }
           ]
-          authorization_mapper = Azure::ARM::Network::Models::ExpressRouteCircuitAuthorization.mapper
-          @network_client.deserialize(authorization_mapper, authorizations, 'result.body')
+          authorization_mapper = Azure::Network::Mgmt::V2020_05_01::Models::ExpressRouteCircuitAuthorization.mapper
+          @network_client.deserialize(authorization_mapper, authorizations)
         end
       end
     end

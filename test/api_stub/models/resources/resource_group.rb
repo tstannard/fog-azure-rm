@@ -15,8 +15,8 @@ module ApiStub
               "provisioning_state": "Succeeded"
             }
           }'
-          result_mapper = Azure::ARM::Resources::Models::ResourceGroup.mapper
-          client.deserialize(result_mapper, Fog::JSON.decode(resource_group), 'result.body')
+          result_mapper = Azure::Resources::Mgmt::V2020_06_01::Models::ResourceGroup.mapper
+          client.deserialize(result_mapper, Fog::JSON.decode(resource_group))
         end
       end
     end

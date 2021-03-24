@@ -72,8 +72,8 @@ module Fog
               ]
             }
           }
-          result_mapper = Azure::ARM::Resources::Models::Deployment.mapper
-          @rmc.deserialize(result_mapper, deployments, 'result.body')
+          result_mapper = Azure::Resources::Mgmt::V2020_06_01::Models::Deployment.mapper
+          @rmc.deserialize(result_mapper, deployments)
         end
       end
     end

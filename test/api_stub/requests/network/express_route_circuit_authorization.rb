@@ -12,8 +12,8 @@ module ApiStub
               "authorizationUseStatus" : "Available"
             }
           }'
-          circuit_auth_mapper = Azure::ARM::Network::Models::ExpressRouteCircuitAuthorization.mapper
-          network_client.deserialize(circuit_auth_mapper, Fog::JSON.decode(authorization), 'result.body')
+          circuit_auth_mapper = Azure::Network::Mgmt::V2020_05_01::Models::ExpressRouteCircuitAuthorization.mapper
+          network_client.deserialize(circuit_auth_mapper, Fog::JSON.decode(authorization))
         end
 
         def self.auth_hash

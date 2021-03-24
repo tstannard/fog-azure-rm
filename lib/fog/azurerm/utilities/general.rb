@@ -97,7 +97,7 @@ def resource_manager_endpoint_url(environment = ENVIRONMENT_AZURE_CLOUD)
   when ENVIRONMENT_AZURE_GERMAN_CLOUD
     MsRestAzure::AzureEnvironments::AzureGermanCloud.resource_manager_endpoint_url
   else
-    MsRestAzure::AzureEnvironments::Azure.resource_manager_endpoint_url
+    MsRestAzure::AzureEnvironments::AzureCloud.resource_manager_endpoint_url
   end
 end
 

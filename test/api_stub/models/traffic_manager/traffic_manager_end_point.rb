@@ -18,8 +18,8 @@ module ApiStub
               "endpointLocation": "centralus"
             }
           }'
-          endpoint_mapper = Azure::ARM::TrafficManager::Models::Endpoint.mapper
-          traffic_manager_client.deserialize(endpoint_mapper, Fog::JSON.decode(endpoint), 'result.body')
+          endpoint_mapper = Azure::TrafficManager::Mgmt::V2018_04_01::Models::Endpoint.mapper
+          traffic_manager_client.deserialize(endpoint_mapper, Fog::JSON.decode(endpoint))
         end
       end
     end

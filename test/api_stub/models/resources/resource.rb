@@ -34,8 +34,8 @@ module ApiStub
               }
             }]
           }'
-          result_mapper = Azure::ARM::Resources::Models::ResourceListResult.mapper
-          client.deserialize(result_mapper, Fog::JSON.decode(resources), 'result.body').value
+          result_mapper = Azure::Resources::Mgmt::V2020_06_01::Models::ResourceListResult.mapper
+          client.deserialize(result_mapper, Fog::JSON.decode(resources)).value
         end
 
         def self.list_resources_in_resource_group_response(client)
@@ -51,8 +51,8 @@ module ApiStub
                 "name": "free"
             }
           }'
-          result_mapper = Azure::ARM::Resources::Models::GenericResource.mapper
-          client.deserialize(result_mapper, Fog::JSON.decode(resources), 'result.body')
+          result_mapper = Azure::Resources::Mgmt::V2020_06_01::Models::GenericResource.mapper
+          client.deserialize(result_mapper, Fog::JSON.decode(resources))
         end
       end
     end

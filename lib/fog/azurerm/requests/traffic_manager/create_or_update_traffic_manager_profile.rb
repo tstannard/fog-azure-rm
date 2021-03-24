@@ -28,7 +28,7 @@ module Fog
         private
 
         def get_profile_object(traffic_routing_method, relative_name, ttl, protocol, port, path, endpoints, tags)
-          traffic_manager_profile = Azure::ARM::TrafficManager::Models::Profile.new
+          traffic_manager_profile = Azure::TrafficManager::Mgmt::V2018_04_01::Models::Profile.new
           traffic_manager_profile.traffic_routing_method = traffic_routing_method
           traffic_manager_profile.location = GLOBAL
 
@@ -52,14 +52,14 @@ module Fog
         end
 
         def get_traffic_manager_dns_config(relative_name, ttl)
-          traffic_manager_dns_config = Azure::ARM::TrafficManager::Models::DnsConfig.new
+          traffic_manager_dns_config = Azure::TrafficManager::Mgmt::V2018_04_01::Models::DnsConfig.new
           traffic_manager_dns_config.relative_name = relative_name
           traffic_manager_dns_config.ttl = ttl
           traffic_manager_dns_config
         end
 
         def get_traffic_manager_monitor_config(protocol, port, path)
-          traffic_manager_monitor_config = Azure::ARM::TrafficManager::Models::MonitorConfig.new
+          traffic_manager_monitor_config = Azure::TrafficManager::Mgmt::V2018_04_01::Models::MonitorConfig.new
           traffic_manager_monitor_config.path = path
           traffic_manager_monitor_config.protocol = protocol
           traffic_manager_monitor_config.port = port
@@ -121,8 +121,8 @@ module Fog
               ]
             }
           }
-          profile_mapper = Azure::ARM::TrafficManager::Models::Profile.mapper
-          @traffic_mgmt_client.deserialize(profile_mapper, profile, 'result.body')
+          profile_mapper = Azure::TrafficManager::Mgmt::V2018_04_01::Models::Profile.mapper
+          @traffic_mgmt_client.deserialize(profile_mapper, profile)
         end
       end
     end

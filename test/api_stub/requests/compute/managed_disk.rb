@@ -40,8 +40,8 @@ module ApiStub
             "id": "/subscriptions/{subscriptionId}/resourceGroups/myResourceGroup/providers/Microsoft.Compute/disks/myManagedDisk1",
             "name": "myManagedDisk1"
           }'
-          disk_mapper = Azure::ARM::Compute::Models::Disk.mapper
-          compute_client.deserialize(disk_mapper, Fog::JSON.decode(body), 'result.body')
+          disk_mapper = Azure::Compute::Mgmt::V2020_06_30::Models::Disk.mapper
+          compute_client.deserialize(disk_mapper, Fog::JSON.decode(body))
         end
 
         def self.get_managed_disk_response(sdk_compute_client)
@@ -83,8 +83,8 @@ module ApiStub
                 "name": "myManagedDisk1"
              } ]
           }'
-          disk_mapper = Azure::ARM::Compute::Models::Disk.mapper
-          sdk_compute_client.deserialize(disk_mapper, Fog::JSON.decode(body), 'result.body')
+          disk_mapper = Azure::Compute::Mgmt::V2020_06_30::Models::Disk.mapper
+          sdk_compute_client.deserialize(disk_mapper, Fog::JSON.decode(body))
         end
 
         def self.operation_status_response(sdk_compute_client)
@@ -93,8 +93,8 @@ module ApiStub
             'status' => 'success',
             'error' => 'ERROR'
           }
-          response_mapper = Azure::ARM::Compute::Models::OperationStatusResponse.mapper
-          sdk_compute_client.deserialize(response_mapper, response, 'result.body')
+          response_mapper = Azure::Compute::Mgmt::V2020_06_30::Models::OperationStatusResponse.mapper
+          sdk_compute_client.deserialize(response_mapper, response)
         end
       end
     end

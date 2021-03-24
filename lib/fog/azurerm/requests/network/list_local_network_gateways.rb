@@ -41,8 +41,8 @@ module Fog
               }
             ]
           }
-          local_network_gateway_mapper = Azure::ARM::Network::Models::LocalNetworkGatewayListResult.mapper
-          @network_client.deserialize(local_network_gateway_mapper, local_network_gateway, 'result.body')
+          local_network_gateway_mapper = Azure::Network::Mgmt::V2020_05_01::Models::LocalNetworkGatewayListResult.mapper
+          @network_client.deserialize(local_network_gateway_mapper, local_network_gateway)
         end
       end
     end

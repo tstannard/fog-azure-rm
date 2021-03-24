@@ -22,8 +22,8 @@ module ApiStub
               'protected_settings' => {}
             }
           }
-          extension_mapper = Azure::ARM::Compute::Models::VirtualMachineExtension.mapper
-          compute_client.deserialize(extension_mapper, body, 'result.body')
+          extension_mapper = Azure::Compute::Mgmt::V2020_06_30::Models::VirtualMachineExtension.mapper
+          compute_client.deserialize(extension_mapper, body)
         end
       end
     end

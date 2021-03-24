@@ -30,8 +30,8 @@ module ApiStub
               "vaultUri" : "https://fog-test-kv.vault.azure.net/"
             }
           }'
-          vault_mapper = Azure::ARM::KeyVault::Models::Vault.mapper
-          key_vault_client.deserialize(vault_mapper, Fog::JSON.decode(response), 'result.body')
+          vault_mapper = Azure::KeyVault::Mgmt::V2019_09_01::Models::Vault.mapper
+          key_vault_client.deserialize(vault_mapper, Fog::JSON.decode(response))
         end
 
         def self.vault_params
@@ -86,8 +86,8 @@ module ApiStub
               }
             }]
           }'
-          vaults_mapper = Azure::ARM::KeyVault::Models::VaultListResult.mapper
-          key_vault_client.deserialize(vaults_mapper, Fog::JSON.decode(response), 'result.body')
+          vaults_mapper = Azure::KeyVault::Mgmt::V2019_09_01::Models::VaultListResult.mapper
+          key_vault_client.deserialize(vaults_mapper, Fog::JSON.decode(response))
         end
       end
     end

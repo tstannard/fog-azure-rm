@@ -6,7 +6,7 @@ module Fog
         def create_resource_group(name, location, tags)
           msg = "Creating Resource Group: #{name}."
           Fog::Logger.debug msg
-          resource_group = Azure::ARM::Resources::Models::ResourceGroup.new
+          resource_group = Azure::Resources::Mgmt::V2020_06_01::Models::ResourceGroup.new
           resource_group.location = location
           resource_group.tags = tags
           begin
@@ -31,8 +31,8 @@ module Fog
               'provisioningState' => 'Succeeded'
             }
           }
-          result_mapper = Azure::ARM::Resources::Models::ResourceGroup.mapper
-          @rmc.deserialize(result_mapper, resource_group, 'result.body')
+          result_mapper = Azure::Resources::Mgmt::V2020_06_01::Models::ResourceGroup.mapper
+          @rmc.deserialize(result_mapper, resource_group)
         end
       end
     end

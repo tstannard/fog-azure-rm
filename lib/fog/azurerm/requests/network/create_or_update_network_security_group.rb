@@ -22,7 +22,7 @@ module Fog
         private
 
         def get_security_group_object(security_rules, location, tags)
-          security_group = Azure::ARM::Network::Models::NetworkSecurityGroup.new
+          security_group = Azure::Network::Mgmt::V2020_05_01::Models::NetworkSecurityGroup.new
           security_group.security_rules = get_security_rule_objects(security_rules)
           security_group.location = location
           security_group.tags = tags
@@ -32,7 +32,7 @@ module Fog
         def get_security_rule_objects(security_rules)
           rules = []
           security_rules.each do |sr|
-            security_rule = Azure::ARM::Network::Models::SecurityRule.new
+            security_rule = Azure::Network::Mgmt::V2020_05_01::Models::SecurityRule.new
             security_rule.description = sr[:description] unless sr[:description].nil?
             security_rule.protocol = sr[:protocol]
             security_rule.source_port_range = sr[:source_port_range]
@@ -169,8 +169,8 @@ module Fog
                 'provisioningState' => 'Updating'
               }
           }
-          nsg_mapper = Azure::ARM::Network::Models::NetworkSecurityGroup.mapper
-          @network_client.deserialize(nsg_mapper, network_security_group, 'result.body')
+          nsg_mapper = Azure::Network::Mgmt::V2020_05_01::Models::NetworkSecurityGroup.mapper
+          @network_client.deserialize(nsg_mapper, network_security_group)
         end
       end
     end

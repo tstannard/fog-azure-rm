@@ -13,12 +13,12 @@ module ApiStub
                 'name' => 'Standard_LRS'
               }
           }
-          storage_account_mapper = Azure::ARM::Storage::Models::StorageAccount.mapper
-          storage_mgmt_client.deserialize(storage_account_mapper, storage_account_hash, 'hash')
+          storage_account_mapper = Azure::Storage::Mgmt::V2021_01_01::Models::StorageAccount.mapper
+          storage_mgmt_client.deserialize(storage_account_mapper, storage_account_hash)
         end
 
         def self.create_storage_account
-          storage_acc_obj = Azure::ARM::Storage::Models::StorageAccount.new
+          storage_acc_obj = Azure::Storage::Mgmt::V2021_01_01::Models::StorageAccount.new
           storage_acc_obj.id = '1'
           storage_acc_obj.name = 'fog_test_storage_account'
           storage_acc_obj.type = nil
@@ -61,8 +61,8 @@ module ApiStub
                 }
               ]
           }
-          storage_account_list_mapper = Azure::ARM::Storage::Models::StorageAccountListResult.mapper
-          storage_mgmt_client.deserialize(storage_account_list_mapper, list_storage_accounts_hash, 'hash')
+          storage_account_list_mapper = Azure::Storage::Mgmt::V2021_01_01::Models::StorageAccountListResult.mapper
+          storage_mgmt_client.deserialize(storage_account_list_mapper, list_storage_accounts_hash)
         end
 
         def self.list_storage_accounts(storage_mgmt_client)
@@ -87,8 +87,8 @@ module ApiStub
                 }
               ]
           }
-          storage_account_list_mapper = Azure::ARM::Storage::Models::StorageAccountListResult.mapper
-          storage_mgmt_client.deserialize(storage_account_list_mapper, list_storage_accounts_hash, 'hash')
+          storage_account_list_mapper = Azure::Storage::Mgmt::V2021_01_01::Models::StorageAccountListResult.mapper
+          storage_mgmt_client.deserialize(storage_account_list_mapper, list_storage_accounts_hash)
         end
 
         def self.true_case_for_check_name_availability(storage_mgmt_client)
@@ -97,8 +97,8 @@ module ApiStub
             'reason' => 'AccountNameInvalid|AlreadyExists',
             'message' => 'error message'
           }
-          storage_account_check_name_avaiablability_mapper = Azure::ARM::Storage::Models::CheckNameAvailabilityResult.mapper
-          storage_mgmt_client.deserialize(storage_account_check_name_avaiablability_mapper, check_name_availability_hash, 'hash')
+          storage_account_check_name_avaiablability_mapper = Azure::Storage::Mgmt::V2021_01_01::Models::CheckNameAvailabilityResult.mapper
+          storage_mgmt_client.deserialize(storage_account_check_name_avaiablability_mapper, check_name_availability_hash)
         end
 
         def self.false_case_for_check_name_availability(storage_mgmt_client)
@@ -107,16 +107,16 @@ module ApiStub
             'reason' => 'AccountNameInvalid|AlreadyExists',
             'message' => 'error message'
           }
-          storage_account_check_name_avaiablability_mapper = Azure::ARM::Storage::Models::CheckNameAvailabilityResult.mapper
-          storage_mgmt_client.deserialize(storage_account_check_name_avaiablability_mapper, check_name_availability_hash, 'hash')
+          storage_account_check_name_avaiablability_mapper = Azure::Storage::Mgmt::V2021_01_01::Models::CheckNameAvailabilityResult.mapper
+          storage_mgmt_client.deserialize(storage_account_check_name_avaiablability_mapper, check_name_availability_hash)
         end
 
         def self.list_keys_response
-          key1 = Azure::ARM::Storage::Models::StorageAccountKey.new
+          key1 = Azure::Storage::Mgmt::V2021_01_01::Models::StorageAccountKey.new
           key1.key_name = 'key1'
           key1.value = 'YWNjZXNzLWtleQ=='
           key1.permissions = 'Full'
-          storage_account_key_list = Azure::ARM::Storage::Models::StorageAccountListKeysResult.new
+          storage_account_key_list = Azure::Storage::Mgmt::V2021_01_01::Models::StorageAccountListKeysResult.new
           storage_account_key_list.keys = [key1]
           storage_account_key_list
         end

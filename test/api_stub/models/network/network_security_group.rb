@@ -68,8 +68,8 @@ module ApiStub
                 ]
              }
           }'
-          result_mapper = Azure::ARM::Network::Models::NetworkSecurityGroup.mapper
-          network_client.deserialize(result_mapper, Fog::JSON.decode(nsg), 'result.body')
+          result_mapper = Azure::Network::Mgmt::V2020_05_01::Models::NetworkSecurityGroup.mapper
+          network_client.deserialize(result_mapper, Fog::JSON.decode(nsg))
         end
 
         def self.security_rules_array

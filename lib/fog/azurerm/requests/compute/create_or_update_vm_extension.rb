@@ -20,7 +20,7 @@ module Fog
         private
 
         def create_virtual_machine_extension_object(virtual_machine_extension)
-          vm_extension = Azure::ARM::Compute::Models::VirtualMachineExtension.new
+          vm_extension = Azure::Compute::Mgmt::V2020_06_30::Models::VirtualMachineExtension.new
           vm_extension.name = virtual_machine_extension[:name]
           vm_extension.location = virtual_machine_extension[:location]
           vm_extension.virtual_machine_extension_type = virtual_machine_extension[:type]
@@ -54,8 +54,8 @@ module Fog
               'protected_settings' => {}
             }
           }
-          extension_mapper = Azure::ARM::Compute::Models::VirtualMachineExtension.mapper
-          @compute_mgmt_client.deserialize(extension_mapper, body, 'result.body')
+          extension_mapper = Azure::Compute::Mgmt::V2020_06_30::Models::VirtualMachineExtension.mapper
+          @compute_mgmt_client.deserialize(extension_mapper, body)
         end
       end
     end

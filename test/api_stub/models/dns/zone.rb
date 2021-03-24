@@ -20,8 +20,8 @@ module ApiStub
               },
             "resource_group": "fog-test-rg"
           }'
-          zone_mapper = Azure::ARM::Dns::Models::Zone.mapper
-          dns_client.deserialize(zone_mapper, Fog::JSON.decode(zone), 'result.body')
+          zone_mapper = Azure::Dns::Mgmt::V2017_10_01::Models::Zone.mapper
+          dns_client.deserialize(zone_mapper, Fog::JSON.decode(zone))
         end
       end
     end

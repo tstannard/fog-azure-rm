@@ -23,15 +23,15 @@ module Fog
 
           case resource_type
           when SUBNET
-            subnet = Azure::ARM::Network::Models::Subnet.new
+            subnet = Azure::Network::Mgmt::V2020_05_01::Models::Subnet.new
             subnet.id = resource_id
             network_interface.ip_configurations[0].subnet = subnet
           when PUBLIC_IP
-            public_ip_address = Azure::ARM::Network::Models::PublicIPAddress.new
+            public_ip_address = Azure::Network::Mgmt::V2020_05_01::Models::PublicIPAddress.new
             public_ip_address.id = resource_id
             network_interface.ip_configurations[0].public_ipaddress = public_ip_address
           when NETWORK_SECURITY_GROUP
-            network_security_group = Azure::ARM::Network::Models::NetworkSecurityGroup.new
+            network_security_group = Azure::Network::Mgmt::V2020_05_01::Models::NetworkSecurityGroup.new
             network_security_group.id = resource_id
             network_interface.network_security_group = network_security_group
           end
@@ -80,8 +80,8 @@ module Fog
                 'provisioningState' => 'Succeeded'
               }
           }
-          network_interface_mapper = Azure::ARM::Network::Models::NetworkInterface.mapper
-          @network_client.deserialize(network_interface_mapper, nic, 'result.body')
+          network_interface_mapper = Azure::Network::Mgmt::V2020_05_01::Models::NetworkInterface.mapper
+          @network_client.deserialize(network_interface_mapper, nic)
         end
       end
     end

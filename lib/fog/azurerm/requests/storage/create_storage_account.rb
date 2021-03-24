@@ -25,16 +25,16 @@ module Fog
         private
 
         def get_storage_account_params(sku_name, location, replication, encryption_enabled, tags)
-          params = Azure::ARM::Storage::Models::StorageAccountCreateParameters.new
-          sku = Azure::ARM::Storage::Models::Sku.new
+          params = Azure::Storage::Mgmt::V2021_01_01::Models::StorageAccountCreateParameters.new
+          sku = Azure::Storage::Mgmt::V2021_01_01::Models::Sku.new
           sku.name = "#{sku_name}_#{replication}"
           params.sku = sku
-          params.kind = Azure::ARM::Storage::Models::Kind::Storage
+          params.kind = Azure::Storage::Mgmt::V2021_01_01::Models::Kind::Storage
           params.location = location
           unless encryption_enabled.nil?
-            encryption = Azure::ARM::Storage::Models::Encryption.new
-            encryption_services = Azure::ARM::Storage::Models::EncryptionServices.new
-            encryption_service = Azure::ARM::Storage::Models::EncryptionService.new
+            encryption = Azure::Storage::Mgmt::V2021_01_01::Models::Encryption.new
+            encryption_services = Azure::Storage::Mgmt::V2021_01_01::Models::EncryptionServices.new
+            encryption_service = Azure::Storage::Mgmt::V2021_01_01::Models::EncryptionService.new
             encryption_service.enabled = encryption_enabled
             encryption_service.last_enabled_time = Time.new if encryption_service.enabled
             encryption_services.blob = encryption_service
@@ -57,8 +57,8 @@ module Fog
                 'name' => 'Standard_LRS'
               }
           }
-          storage_account_mapper = Azure::ARM::Storage::Models::StorageAccount.mapper
-          storage_mgmt_client.deserialize(storage_account_mapper, storage_account_hash, 'hash')
+          storage_account_mapper = Azure::Storage::Mgmt::V2021_01_01::Models::StorageAccount.mapper
+          storage_mgmt_client.deserialize(storage_account_mapper, storage_account_hash)
         end
       end
     end

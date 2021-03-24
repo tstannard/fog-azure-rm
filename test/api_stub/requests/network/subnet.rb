@@ -27,8 +27,8 @@ module ApiStub
                 ]
              }
           }'
-          subnet_mapper = Azure::ARM::Network::Models::Subnet.mapper
-          network_client.deserialize(subnet_mapper, Fog::JSON.decode(body), 'result.body')
+          subnet_mapper = Azure::Network::Mgmt::V2020_05_01::Models::Subnet.mapper
+          network_client.deserialize(subnet_mapper, Fog::JSON.decode(body))
         end
 
         def self.list_subnets_response(network_client)
@@ -58,8 +58,8 @@ module ApiStub
               }
             } ]
           }'
-          subnet_mapper = Azure::ARM::Network::Models::SubnetListResult.mapper
-          network_client.deserialize(subnet_mapper, Fog::JSON.decode(body), 'result.body')
+          subnet_mapper = Azure::Network::Mgmt::V2020_05_01::Models::SubnetListResult.mapper
+          network_client.deserialize(subnet_mapper, Fog::JSON.decode(body))
         end
 
         def self.delete_subnet_response

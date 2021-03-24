@@ -72,8 +72,8 @@ module Fog
                 'provisioningState' => 'Succeeded'
               }
           }
-          network_interface_mapper = Azure::ARM::Network::Models::NetworkInterface.mapper
-          @network_client.deserialize(network_interface_mapper, nic, 'result.body')
+          network_interface_mapper = Azure::Network::Mgmt::V2020_05_01::Models::NetworkInterface.mapper
+          @network_client.deserialize(network_interface_mapper, nic)
         end
       end
     end

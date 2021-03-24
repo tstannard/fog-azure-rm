@@ -62,8 +62,8 @@ module Fog
                 'provisioningState' => 'Succeeded'
               }
           }
-          vnet_mapper = Azure::ARM::Network::Models::VirtualNetwork.mapper
-          @network_client.deserialize(vnet_mapper, virtual_network, 'result.body')
+          vnet_mapper = Azure::Network::Mgmt::V2020_05_01::Models::VirtualNetwork.mapper
+          @network_client.deserialize(vnet_mapper, virtual_network)
         end
       end
     end

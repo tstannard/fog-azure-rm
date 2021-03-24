@@ -34,8 +34,8 @@ module Fog
               }
             ]
           }
-          gateway_mapper = Azure::ARM::Network::Models::VirtualNetworkGatewayListResult.mapper
-          @network_client.deserialize(gateway_mapper, gateway, 'result.body').value
+          gateway_mapper = Azure::Network::Mgmt::V2020_05_01::Models::VirtualNetworkGatewayListResult.mapper
+          @network_client.deserialize(gateway_mapper, gateway).value
         end
       end
     end

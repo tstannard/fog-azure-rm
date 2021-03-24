@@ -22,8 +22,8 @@ module ApiStub
               "connectivityState": "Connected"
             }
           }'
-          connection_mapper = Azure::ARM::Network::Models::VirtualNetworkGatewayConnection.mapper
-          network_client.deserialize(connection_mapper, Fog::JSON.decode(gateway_connection), 'result.body')
+          connection_mapper = Azure::Network::Mgmt::V2020_05_01::Models::VirtualNetworkGatewayConnection.mapper
+          network_client.deserialize(connection_mapper, Fog::JSON.decode(gateway_connection))
         end
 
         def self.list_virtual_network_gateway_connection_response(network_client)
@@ -49,14 +49,14 @@ module ApiStub
               }
             ]
           }'
-          connection_mapper = Azure::ARM::Network::Models::VirtualNetworkGatewayConnectionListResult.mapper
-          network_client.deserialize(connection_mapper, Fog::JSON.decode(gateway_connection), 'result.body')
+          connection_mapper = Azure::Network::Mgmt::V2020_05_01::Models::VirtualNetworkGatewayConnectionListResult.mapper
+          network_client.deserialize(connection_mapper, Fog::JSON.decode(gateway_connection))
         end
 
         def self.get_connection_shared_key_response(network_client)
           shared_key = '{ "value": "hello" }'
-          shared_key_mapper = Azure::ARM::Network::Models::ConnectionSharedKey.mapper
-          network_client.deserialize(shared_key_mapper, Fog::JSON.decode(shared_key), 'result.body')
+          shared_key_mapper = Azure::Network::Mgmt::V2020_05_01::Models::ConnectionSharedKey.mapper
+          network_client.deserialize(shared_key_mapper, Fog::JSON.decode(shared_key))
         end
 
         def self.delete_virtual_network_gateway_connection_response

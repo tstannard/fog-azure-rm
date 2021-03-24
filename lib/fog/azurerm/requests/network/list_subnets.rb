@@ -46,8 +46,8 @@ module Fog
               }
             ]
           }
-          subnet_mapper = Azure::ARM::Network::Models::SubnetListResult.mapper
-          @network_client.deserialize(subnet_mapper, subnet, 'result.body').value
+          subnet_mapper = Azure::Network::Mgmt::V2020_05_01::Models::SubnetListResult.mapper
+          @network_client.deserialize(subnet_mapper, subnet).value
         end
       end
     end

@@ -22,7 +22,7 @@ module Fog
         private
 
         def get_network_gateway_connection_object(gateway_connection_params)
-          gateway_connection = Azure::ARM::Network::Models::VirtualNetworkGatewayConnection.new
+          gateway_connection = Azure::Network::Mgmt::V2020_05_01::Models::VirtualNetworkGatewayConnection.new
 
           gateway_connection.name = gateway_connection_params[:name]
           gateway_connection.location = gateway_connection_params[:location]
@@ -74,8 +74,8 @@ module Fog
               'connectivityState' => 'Connected'
             }
           }
-          connection_mapper = Azure::ARM::Network::Models::VirtualNetworkGatewayConnection.mapper
-          @network_client.deserialize(connection_mapper, connection, 'result.body')
+          connection_mapper = Azure::Network::Mgmt::V2020_05_01::Models::VirtualNetworkGatewayConnection.mapper
+          @network_client.deserialize(connection_mapper, connection)
         end
       end
     end

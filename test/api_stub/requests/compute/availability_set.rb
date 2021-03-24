@@ -17,8 +17,8 @@ module ApiStub
                       "name":"Classic"
                     }
                   }'
-          availability_set_mapper = Azure::ARM::Compute::Models::AvailabilitySet.mapper
-          compute_client.deserialize(availability_set_mapper, Fog::JSON.decode(body), 'result.body')
+          availability_set_mapper = Azure::Compute::Mgmt::V2020_06_30::Models::AvailabilitySet.mapper
+          compute_client.deserialize(availability_set_mapper, Fog::JSON.decode(body))
         end
 
         def self.create_managed_availability_set_response(compute_client)
@@ -35,8 +35,8 @@ module ApiStub
                       "name":"Aligned"
                     }
                   }'
-          availability_set_mapper = Azure::ARM::Compute::Models::AvailabilitySet.mapper
-          compute_client.deserialize(availability_set_mapper, Fog::JSON.decode(body), 'result.body')
+          availability_set_mapper = Azure::Compute::Mgmt::V2020_06_30::Models::AvailabilitySet.mapper
+          compute_client.deserialize(availability_set_mapper, Fog::JSON.decode(body))
         end
 
         def self.create_availability_set_response(compute_client)
@@ -50,8 +50,8 @@ module ApiStub
                     "platformFaultDomainCount": 2,
                     "virtualMachines":[]
                   }'
-          availability_set_mapper = Azure::ARM::Compute::Models::AvailabilitySet.mapper
-          compute_client.deserialize(availability_set_mapper, Fog::JSON.decode(body), 'result.body')
+          availability_set_mapper = Azure::Compute::Mgmt::V2020_06_30::Models::AvailabilitySet.mapper
+          compute_client.deserialize(availability_set_mapper, Fog::JSON.decode(body))
         end
 
         def self.create_custom_availability_set_response(compute_client)
@@ -65,8 +65,8 @@ module ApiStub
                     "platformFaultDomainCount": 3,
                     "virtualMachines":[]
                   }'
-          availability_set_mapper = Azure::ARM::Compute::Models::AvailabilitySet.mapper
-          compute_client.deserialize(availability_set_mapper, Fog::JSON.decode(body), 'result.body')
+          availability_set_mapper = Azure::Compute::Mgmt::V2020_06_30::Models::AvailabilitySet.mapper
+          compute_client.deserialize(availability_set_mapper, Fog::JSON.decode(body))
         end
 
         def self.list_availability_set_response(sdk_compute_client)
@@ -85,8 +85,8 @@ module ApiStub
                     }
               } ]
           }'
-          availability_set_mapper = Azure::ARM::Compute::Models::AvailabilitySetListResult.mapper
-          sdk_compute_client.deserialize(availability_set_mapper, Fog::JSON.decode(body), 'result.body')
+          availability_set_mapper = Azure::Compute::Mgmt::V2020_06_30::Models::AvailabilitySetListResult.mapper
+          sdk_compute_client.deserialize(availability_set_mapper, Fog::JSON.decode(body))
         end
 
         def self.get_availability_set_response(sdk_compute_client)
@@ -105,8 +105,8 @@ module ApiStub
                     }
               } ]
           }'
-          availability_set_mapper = Azure::ARM::Compute::Models::AvailabilitySet.mapper
-          sdk_compute_client.deserialize(availability_set_mapper, Fog::JSON.decode(body), 'result.body')
+          availability_set_mapper = Azure::Compute::Mgmt::V2020_06_30::Models::AvailabilitySet.mapper
+          sdk_compute_client.deserialize(availability_set_mapper, Fog::JSON.decode(body))
         end
       end
     end

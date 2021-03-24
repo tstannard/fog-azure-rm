@@ -135,8 +135,8 @@ module ApiStub
               "provisioningState": "Succeeded"
             }
           }'
-          gateway_mapper = Azure::ARM::Network::Models::ApplicationGateway.mapper
-          gateway_client.deserialize(gateway_mapper, Fog::JSON.decode(response), 'result.body')
+          gateway_mapper = Azure::Network::Mgmt::V2020_05_01::Models::ApplicationGateway.mapper
+          gateway_client.deserialize(gateway_mapper, Fog::JSON.decode(response))
         end
 
         def self.gateway_params
@@ -302,8 +302,8 @@ module ApiStub
               }
             }]
           }'
-          gateway_list_mapper = Azure::ARM::Network::Models::ApplicationGatewayListResult.mapper
-          gateway_client.deserialize(gateway_list_mapper, Fog::JSON.decode(response), 'result.body')
+          gateway_list_mapper = Azure::Network::Mgmt::V2020_05_01::Models::ApplicationGatewayListResult.mapper
+          gateway_client.deserialize(gateway_list_mapper, Fog::JSON.decode(response))
         end
 
         def self.delete_application_gateway_response

@@ -24,8 +24,8 @@ module ApiStub
                             }
                           }
                   }'
-          express_route_circuit_peering_mapper = Azure::ARM::Network::Models::ExpressRouteCircuitPeering.mapper
-          network_client.deserialize(express_route_circuit_peering_mapper, Fog::JSON.decode(peering), 'result.body')
+          express_route_circuit_peering_mapper = Azure::Network::Mgmt::V2020_05_01::Models::ExpressRouteCircuitPeering.mapper
+          network_client.deserialize(express_route_circuit_peering_mapper, Fog::JSON.decode(peering))
         end
       end
     end

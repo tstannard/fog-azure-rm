@@ -63,8 +63,8 @@ module ApiStub
               }
             }
           }'
-          network_interface_mapper = Azure::ARM::Network::Models::NetworkInterface.mapper
-          network_client.deserialize(network_interface_mapper, Fog::JSON.decode(body), 'result.body')
+          network_interface_mapper = Azure::Network::Mgmt::V2020_05_01::Models::NetworkInterface.mapper
+          network_client.deserialize(network_interface_mapper, Fog::JSON.decode(body))
         end
 
         def self.detach_pip_from_nic_response(network_client)
@@ -125,8 +125,8 @@ module ApiStub
               }
             }
           }'
-          network_interface_mapper = Azure::ARM::Network::Models::NetworkInterface.mapper
-          network_client.deserialize(network_interface_mapper, Fog::JSON.decode(body), 'result.body')
+          network_interface_mapper = Azure::Network::Mgmt::V2020_05_01::Models::NetworkInterface.mapper
+          network_client.deserialize(network_interface_mapper, Fog::JSON.decode(body))
         end
 
         def self.detach_nsg_from_nic_response(network_client)
@@ -184,8 +184,8 @@ module ApiStub
               }
             }
           }'
-          network_interface_mapper = Azure::ARM::Network::Models::NetworkInterface.mapper
-          network_client.deserialize(network_interface_mapper, Fog::JSON.decode(body), 'result.body')
+          network_interface_mapper = Azure::Network::Mgmt::V2020_05_01::Models::NetworkInterface.mapper
+          network_client.deserialize(network_interface_mapper, Fog::JSON.decode(body))
         end
 
         def self.list_network_interfaces_response(network_client)
@@ -251,8 +251,8 @@ module ApiStub
               }
             } ]
           }'
-          network_interface_list_mapper = Azure::ARM::Network::Models::NetworkInterfaceListResult.mapper
-          network_client.deserialize(network_interface_list_mapper, Fog::JSON.decode(body), 'result.body')
+          network_interface_list_mapper = Azure::Network::Mgmt::V2020_05_01::Models::NetworkInterfaceListResult.mapper
+          network_client.deserialize(network_interface_list_mapper, Fog::JSON.decode(body))
         end
 
         def self.delete_network_interface_response
